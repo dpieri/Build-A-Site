@@ -1,0 +1,82 @@
+<script type="text/javascript" src="http://meta100.github.com/mColorPicker/javascripts/mColorPicker_min.js" charset="UTF-8"></script>
+
+<section id="interface">
+	<div id="close" class="i_button">Close</div>
+	<br class="clear" />
+	<%= form_tag "/", :id => 'site_form' do %>
+
+		<div class="third">
+			<h4>Accent Color</h4>
+			<%= text_field_tag :accent_color, "rgb(#{@color_1})", :type => "color", "data-text" => "hidden"%>
+		</div>
+		<div class="third">
+			<h4>Button Color</h4>
+			<%= text_field_tag :button_color, "rgb(#{@color_2})", :type => "color", "data-text" => "hidden"%>
+		</div>
+		<div class="third">
+			<h4>Background</h4>
+			<%= text_field_tag :background_color, "rgb(#{@color_3})", :type => "color", "data-text" => "hidden"%>
+		</div>
+		<br class="clear" />
+		
+		<div>
+			<h4>Website Type</h4>
+			<%= radio_button_tag(:type, "social", @site_type == 'Social') %>
+			<%= label_tag("Social") %>
+			<%= radio_button_tag(:type, "webapp", @site_type == 'Webapp') %>
+			<%= label_tag("Webapp") %>
+			<%= radio_button_tag(:type, "lifestyle", @site_type == 'Lifestyle') %>
+			<%= label_tag("Lifestyle") %>
+			<%= radio_button_tag(:type, "b2b", @site_type == 'B2b') %>
+			<%= label_tag("B2B") %>
+		</div>
+		
+		<div id="service_type" style="display:none">
+			<h4>What are you providing? [these don't do anything right now]</h4>
+			<%= radio_button_tag(:service, "platform") %>
+			<%= label_tag("Service") %>
+			<%= radio_button_tag(:service, "platform") %>
+			<%= label_tag("Platform") %>
+			<%= radio_button_tag(:service, "neither") %>
+			<%= label_tag("Neither") %>
+		</div>
+		
+		<div>
+			<h4>Mobile?</h4>
+			<%= check_box_tag(:mobile, 1, @mobile)%>
+		</div>
+
+		
+		<%= submit_tag "Update CSS", :class => "i_button update" %>
+	
+	<% end %>
+</section>
+<div id="open" class="i_button open_b" style="display:none">Show Controls</div>
+
+<script>
+	$(document).ready(function(){
+		if ( $('#type_b2b').is(':checked') ){
+			$('#service_type').show();
+		}
+	});
+
+	$('#close').click(function(){
+		$('#interface').hide();
+		$('#website').width('100%');
+		$('#open').show();
+	});
+	
+	$('#open').click(function(){
+		$('#interface').show();
+		$('#website').width('82%');
+		$('#open').hide();
+	});
+	
+	$('input[name=type]').change(function(){
+		if ( $('#type_b2b').is(':checked') ){
+			$('#service_type').show();
+		} else {
+			$('#service_type').hide();
+		}
+	});
+</script>
