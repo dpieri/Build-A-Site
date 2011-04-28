@@ -250,6 +250,10 @@ h3{
 	margin: 0 1% 0 3%;
 }
 
+#value_propositions details:first-child{
+	margin: 0 1% 0 0;
+}
+
 #value_propositions details h3{
 	font-weight: bold;
 	margin: 0 0 5px 0;
@@ -258,6 +262,7 @@ h3{
 #value_propositions details img{
 	float: <%= @b2b ? 'left' : 'right'%>;
 	margin: <%= @b2b ? '3px 11px 80px 0' : '3px 0 0 0'%>;
+	<%="margin: 0 0 0 5px;" if @social %>
 }
 
 #value_propositions details p{
@@ -277,6 +282,7 @@ footer{
 .links a{
 	color: rgb(<%= @color_1%>);
 	text-decoration: none;
+	font-size: 12px;
 }
 
 /*========================================================== Buttons */
