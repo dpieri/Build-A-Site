@@ -71,7 +71,7 @@ class InterfaceController < ApplicationController
       @color_3 = @color_3_a.join(',')
     end
     
-    @color_3_dark = ColorHelper::hsvToRGB(ColorHelper::darken color_3_hsv, 0.40).join(',')
+    @color_3_dark = ColorHelper::hsvToRGB(ColorHelper::darken color_3_hsv, 0.40, false).join(',')
     
     @dark_background = color_3_hsv[1] > 0.8
     @background_color_customized = params[:background_color_customized] == 'true'
@@ -91,9 +91,9 @@ class InterfaceController < ApplicationController
     else
       color_diff = 0
     end
-
-    @dark_color = ColorHelper::hsvToRGB(ColorHelper::darken color_2_hsv, 2*color_diff).join(',')
-    @light_color = ColorHelper::hsvToRGB(ColorHelper::darken color_2_hsv, -color_diff).join(',')
+    
+    @dark_color = ColorHelper::hsvToRGB( ColorHelper::darken color_2_hsv, 2*color_diff, true ).join(',')
+    @light_color = ColorHelper::hsvToRGB( ColorHelper::darken color_2_hsv, -color_diff, true ).join(',')
     
     
     #
@@ -110,7 +110,7 @@ class InterfaceController < ApplicationController
     else
       color_diff = 0
     end
-    @stroke = ColorHelper::darken color_2_hsv, color_diff
+    @stroke = ColorHelper::darken color_2_hsv, color_diff, true
   end
   
   def types
