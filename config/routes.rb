@@ -2,7 +2,7 @@ Designer::Application.routes.draw do
   
   root :to => "interface#show"
   
-  match "/css" => "css#show"
+  match "/styles" => "interface#get_css"
   match "/interface" => "interface#show"
   # The priority is based upon order of creation:
   # first created -> highest priority.

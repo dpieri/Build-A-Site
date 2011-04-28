@@ -1,0 +1,334 @@
+	html{
+		font-family:'Lucida Grande', Tahoma, arial, sans-serif;
+		background: <%= @hard_sides ? "#EBEBEB" : "#fff" %>;
+	}
+/*	rgb(#{@color_3})*/
+	
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	
+	<% if @hard_sides %>
+	#container{
+		width: 900px;
+		margin: 20px auto 0 auto;
+		background: #fff;
+		border-radius: 5px 5px 3px 3px;
+		padding: 0px 30px 50px 30px;
+		border: 1px solid #D3D3D3;
+	}
+	#container_shadow{
+		width: 960px;
+		height: 20px;
+		margin: 0 auto;
+		background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8sAAAAPCAYAAADTYF2QAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5MjJCQUExMUJFMjA2ODExOERCQjhGNzlDNDlDMEU4OSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGNkU2M0FEQ0VBRTgxMURGQjE5OUFEOEQ1Nzk3MDc1RSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGNkU2M0FEQkVBRTgxMURGQjE5OUFEOEQ1Nzk3MDc1RSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkMyMjVEMzBEMkIyNTY4MTE5MTA5Qjg1MDhCN0JERjdBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjkyMkJBQTExQkUyMDY4MTE4REJCOEY3OUM0OUMwRTg5Ii8+IDwvcmRmOkRlc2NyaXB0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) no-repeat center -3px;
+	}
+	<% end %>
+	
+	
+	
+/*	================================================ Header*/
+	header{
+		width: 100%;
+		height: 75px;
+		height: <%= @hard_top || @mobile ? 75 : 75 %>px;
+		<% if @hard_sides %>
+		  border-top: 5px solid rgb(<%=@color_3%>);
+		  border-bottom: 1px solid #D3D3D3;
+		  background: #fff;
+		<% elsif @hard_top %>
+		  background: 
+		  -webkit-radial-gradient( 50% 100px, ellipse closest-corner, rgba(0,0,0, 0.1), rgba(0,0,0,0.0)),
+		#D4D4D4;
+
+/*		#center center, 0, center center, 800,*/
+/*		background: -webkit-radial-gradient(red, green);*/
+		  border-bottom: 1px solid #292929;
+		<% else %>
+		  background: #fff;
+		  border-bottom: 1px solid white;
+		<% end %>
+	}
+	
+	header .content{
+		width: 960px;
+		margin: 0 auto 0 auto;
+	}
+	#logo{
+		font-size: 35px;
+		height: 50px;
+		color: rgb(<%=@color_1%>);
+		padding: 20px 0 0 0;
+		float: left;
+	}
+	
+	nav{
+		float: right;
+		margin: 20px 0 0 0;
+		cursor: pointer;
+	}
+	nav li{
+		float:left;
+	}
+	
+	<% if @top_nav == "buttons" %>
+	nav li{
+		background: #fff;
+		border-radius: 4px;
+		color: rgb(<%=@dark_color%>);
+		padding: 8px 10px 8px 10px;
+		margin: 0 0 0 13px;
+	}
+	nav li:hover{
+		background: rgb(<%=@dark_color%>);
+		color: #fff;
+	}
+	<% elsif @top_nav == "distinct" %>
+	nav{
+		border: 1px solid rgb(<%=@color_3_dark%>);
+		border-radius: 5px;
+		margin: 15px 0 0 0;
+		color: rgba(255,255,255,0.9);
+	}
+	nav li{
+		padding: 12px 18px 12px 18px;
+		border-right: 1px solid rgb(<%=@color_3_dark%>);
+		border-left: 1px solid rgba(255,255,255,0.3);
+/*		border-top: 1px solid white;*/  /*If you want it to look more webapp like*/
+		background : -webkit-linear-gradient(rgb(<%=@color_3%>), rgba(<%=@color_3%>,0.7)), #202020; 
+	}
+	nav li:hover{
+		background: rgb(<%=@color_3%>);
+		color: #fff;
+	}
+	nav li:last-child{
+		border-radius: 0 5px 5px 0;
+		border-right: none;
+	}
+	nav li:first-child{
+		border-radius: 5px 0 0 5px;
+		border-left: none;
+/*		border-left: 1px solid white;*/   /*Likewise*/
+	}
+	nav .selected{
+		font-weight: bold;
+	}
+	<% else %>
+	nav{
+		margin: 32px 8px 0 0;
+	}
+	nav li{
+		margin: 0 0 0 15px;
+		padding: 0 15px 0 0;
+		border-right: 1px solid black;
+	}
+	nav li:last-child{
+		border-right: none;
+	}
+	nav .selected{
+		font-weight: bold;
+	}
+	<% end %>
+	
+	
+	
+/*	================================================ Top Promotional Stuff */
+	
+	#top{
+		min-height: 300px;
+		width: <%= @hard_sides ? 900 : 960%>px;
+		margin: 0 auto 0 auto;
+		padding: <%= @hard_sides ? 40 : 40 %>px 0 0 0;
+		position: relative;
+	}
+	
+	#top_background{
+		<% if @tb_contrast && @texture %>
+		 background: url('/images/<%=@texture_image%>'), 
+		 -webkit-gradient(radial, center center, 0, center center, 800, from(rgba(<%=@color_3%>, .70)), to(rgb(<%=@color_3%>)));		
+		<% elsif @tb_contrast %>
+		background: -webkit-gradient(radial, center center, 0, center center, 1000, from(rgba(<%=@color_3%>, .73)), to(rgb(<%=@color_3%>)));
+		 border-bottom: 1px solid rgb(<%= @color_3_dark %>);
+		<% else %>
+		 background: #fff;
+		<% end %>
+	}
+	
+	#top hgroup{
+		float: right;
+		width: 47%;
+		text-align: center;
+		margin: 40px 0 0 0;
+	}
+	h1{
+		font-size: 37px;
+		color: <%= @tb_contrast ? "#fff" : "#202020"%>;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+	}
+	h2{
+		font-size: 16px;
+		font-weight: normal;
+		color: #e2e2e2;
+		color: <%= @tb_contrast ? "#E2E2E2" : "#818181"%>;
+		color: #4E4E4E;
+		<%= "color: #fff;" if @dark_background %>
+		line-height: 19px;
+		padding: 0 20px 0 20px;
+		margin: 10px 0 0 0 ;
+	}
+	h3{
+		
+	}
+	
+	<% if @mobile %>
+	#iPhone{
+		width: 205px;
+		height: 404px;
+		left: 140px;
+		z-index:3;
+		position: absolute;
+		background: url('/images/iphone.png') 0 0 no-repeat;
+	}
+	#eye_candy{
+		position: absolute;
+		top: 72px;
+		left: 15px;
+		width: 175px;
+		height: 261px;
+		background: url('http://placekitten.com/g/175/261') 0 0 no-repeat;
+	}
+	<% else %>
+	#eye_candy{
+		width: 450px;
+		height: 301px;
+		height: <%= @b2b ? 301 : 350%>px;
+		float: left;
+		background: url('http://placekitten.com/g/450/350') 0 0 no-repeat;
+		z-index: 3;
+		position: absolute;
+		box-shadow: 0px 0px 5px #AAAAAA;
+	}
+	<% end %>
+
+/*	================================================ Bottom Promotional Stuff */
+	#bottom{
+		padding: 0 0 0 0;
+		<% if @mobile %>
+		padding-top:130px;
+		<% elsif @b2b %>
+		padding-top: 40px;
+		<% else %>
+		padding-top: 90px;
+		<% end %>
+		width: <%= @hard_sides ? 900 : 960%>px;
+		margin: 0 auto 0 auto;
+	}
+	
+	<% if @b2b %>
+	#endorsements{
+		text-align: center;
+		color: #7A7A8A;
+	}
+	
+	#endorsements .logos{
+		width: 868px;
+		height: 45px;
+		margin: 15px auto 45px auto;
+		background: transparent url("/images/logos_2.png") top left no-repeat;
+	}
+	#endorsements .logos:hover{
+		background-position: 0 -45px;
+	}
+	<% end %>
+	
+	#value_propositions h2{
+		font-size: 20px;
+		margin: 0 0 8px 8px;
+	}
+	
+	#value_propositions details{
+		float: left;
+		font-size: 14px;
+		width: 29%;
+		margin: 0 1% 0 3%;
+	}
+	
+	#value_propositions details h3{
+		font-weight: bold;
+		margin: 0 0 5px 0;
+	}
+	
+	#value_propositions details img{
+		float: <%= @b2b ? 'left' : 'right'%>;
+		margin: <%= @b2b ? '3px 11px 80px 0' : '3px 0 0 0'%>;
+	}
+	
+	#value_propositions details p{
+		line-height: 1.3em;
+	}
+	
+	
+/*	========================================================== Footer  */
+	footer{
+		width: 960px;
+		margin: 90px auto 0 auto;
+		padding: 10px 0 0 0;
+		font-size: 12px;
+		border-top: 1px solid #E9E9E9;
+		color: #7A7A8A;
+	}
+	.links a{
+		color: rgb(<%= @color_1%>);
+		text-decoration: none;
+	}
+	
+/*	========================================================== Buttons */
+	.button{
+		margin: 0 auto 20px auto;
+		padding: 9px 20px 10px 20px;
+		border-radius: <%=@corner_radius %>px;
+		background: -webkit-linear-gradient(rgb(<%=@light_color%>), rgb(<%=@dark_color%>)); 
+		border: 1px solid rgb(<%=@stroke%>);
+		text-shadow: 0px -1px 1px rgba(0,0,0,0.3);
+		color: #ffffff;
+		font-size: 26px;
+		font-weight: bold;
+		text-align: center;
+		cursor:pointer;
+		<% if @inner_glow %>
+		 box-shadow: inset 1px 1px 0  rgba(255,255,255,0.42), 1px 1px 0 rgba(0,0,0,0.2);
+		<% elsif @drop_shadow %>
+		 box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+		<% end %>
+	}
+	
+	.button:hover{
+		background: rgb(<%=@color_2%>);
+	}
+	
+	.button:active{
+		background: -webkit-linear-gradient(rgb(<%=@dark_color%>), rgb(<%=@light_color%>));
+	}
+	
+	<% if @mobile %>
+	.button .mobile{
+		float: left;
+		width: 30px;
+		height: 56px;
+		background: url('iphone.png');
+	}
+	<% end %>
+	
+	.try_it{
+		margin: 20px 0 0 0;
+	}
+	
+	
+/*	================================================ Global and utility stuff */
+	.left{float:left;}
+	.right{float:right;}
+	.center{margin: 0 auto 0 auto;}
+	.center_hack{float: left; position: relative; left: 50%;}
+	.center_hack .inner{float: left; position: relative; left: -50%;}
+	.clear{clear:both;}

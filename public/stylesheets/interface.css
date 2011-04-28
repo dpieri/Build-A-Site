@@ -1,3 +1,16 @@
+.flash{
+	width: 90%;
+	background: #BA7600;
+	border: 1px solid #9C4B0D;
+	line-height: 1.1em;
+	text-align: center;
+	font-size: 14px;
+	color: white;
+	padding: 8px;
+	margin: 5px 0 20px 0;
+}
+
+
 /*	================================================ Layout*/
 
 #interface{
