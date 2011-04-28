@@ -71,7 +71,8 @@ class InterfaceController < ApplicationController
       @color_3 = @color_3_a.join(',')
     end
     
-    @color_3_dark = ColorHelper::hsvToRGB(darken @color_3_a, 0.40)
+    @color_3_dark = ColorHelper::hsvToRGB(darken color_3_hsv, 0.40).join(',')
+    puts "darelakj foijwjijowefoijw eofij weoijf poqiwjef o;ijwae fopijwq eofjqwopijef opijqwejoipf #{@color_3_dark}"
     
     @dark_background = color_3_hsv[1] > 0.8
     @background_color_customized = params[:background_color_customized] == 'true'
@@ -85,9 +86,9 @@ class InterfaceController < ApplicationController
     when "low"
       color_diff = 0.10
     when "medium"
-      color_diff = 0.15
+      color_diff = 0.12
     when "high"
-      color_diff = 0.20
+      color_diff = 0.16
     else
       color_diff = 0
     end

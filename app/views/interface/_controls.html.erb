@@ -6,8 +6,20 @@
 		<script>$('.flash').fadeIn().delay(2000).fadeOut('slow'); </script>
 	<% end %>
 	
-	<div id="close" class="i_button">Close</div>
-	<br class="clear" />
+	<div id="close" class="i_button right">Close</div>
+	<!-- <br class="clear" /> -->
+	
+	<section id="welcome">
+		<h1> Build-A-Site </h1>
+		<p>Websites, without the work</p>
+		<ol>
+			<li>Choose what kind of site you are trying to make </li>
+			<li>Tweak the colors if you wish</li>
+			<li>Download your CSS file</li>
+			<li>Go watch all three director's cut versions of The Lord Of The Rings - You just saved yourself a boat-load of time</li>
+		</ol>
+	</section>
+	<br clas="clear" />
 	<%= form_tag "/", :id => 'site_form' do %>
 
 		<div>
@@ -55,6 +67,7 @@
 
 		<%= submit_tag "Update CSS", :class => "i_button update" %>
 		
+		<br class="clear" />
 		<%= link_to "Download CSS file",
 		 "/styles.css?type=#{@site_type}&accent_color=#{@color_1}&button_color=#{@color_2}&background_color=#{@color_3}&mobile=#{@mobile ? 1 : 0}"%>
 	<% end %>
@@ -69,6 +82,7 @@
 	});
 
 	$('#close').click(function(){
+		console.log("asdf");
 		$('#interface').hide();
 		$('#website').width('100%');
 		$('#open').show();
