@@ -10,16 +10,18 @@
 	<br class="clear" />
 	<%= form_tag "/", :id => 'site_form' do %>
 
-		<div class="third">
+		<div>
 			<h4>Logo Color</h4>
 			<%= text_field_tag :accent_color, "rgb(#{@color_1})", :type => "color", "data-text" => "hidden"%>
 		</div>
-		<div class="third">
+		<div class="third <%= 'inactive' unless @button_color_customized %>">
 			<h4>Button Color</h4>
+			<%= hidden_field_tag :button_color_customized, @button_color_customized%>
 			<%= text_field_tag :button_color, "rgb(#{@color_2})", :type => "color", "data-text" => "hidden"%>
 		</div>
-		<div class="third">
+		<div class="third <%= 'inactive' unless @background_color_customized %>">
 			<h4>Background</h4>
+			<%= hidden_field_tag :background_color_customized, @background_color_customized %> 
 			<%= text_field_tag :background_color, "rgb(#{@color_3})", :type => "color", "data-text" => "hidden"%>
 		</div>
 		<br class="clear" />
@@ -76,6 +78,11 @@
 		$('#interface').show();
 		$('#website').width('82%');
 		$('#open').hide();
+	});
+	
+	$('.inactive').click(function(e){
+		$(this).find('input[type=hidden]:first').val('true');
+		$(this).removeClass('inactive');
 	});
 	
 	$('input[name=type]').change(function(){
