@@ -71,8 +71,7 @@ class InterfaceController < ApplicationController
       @color_3 = @color_3_a.join(',')
     end
     
-    @color_3_dark = ColorHelper::hsvToRGB(darken color_3_hsv, 0.40).join(',')
-    puts "darelakj foijwjijowefoijw eofij weoijf poqiwjef o;ijwae fopijwq eofjqwopijef opijqwejoipf #{@color_3_dark}"
+    @color_3_dark = ColorHelper::hsvToRGB(ColorHelper::darken color_3_hsv, 0.40).join(',')
     
     @dark_background = color_3_hsv[1] > 0.8
     @background_color_customized = params[:background_color_customized] == 'true'
@@ -93,8 +92,8 @@ class InterfaceController < ApplicationController
       color_diff = 0
     end
 
-    @dark_color = ColorHelper::hsvToRGB(darken color_2_hsv, 2*color_diff).join(',')
-    @light_color = ColorHelper::hsvToRGB(darken color_2_hsv, -color_diff).join(',')
+    @dark_color = ColorHelper::hsvToRGB(ColorHelper::darken color_2_hsv, 2*color_diff).join(',')
+    @light_color = ColorHelper::hsvToRGB(ColorHelper::darken color_2_hsv, -color_diff).join(',')
     
     
     #
@@ -111,11 +110,7 @@ class InterfaceController < ApplicationController
     else
       color_diff = 0
     end
-    @stroke = darken color_2_hsv, color_diff
-  end
-  
-  def darken(color, diff)    
-    [color[0], color[1], [0, [255, (color[2] - diff)].min].max ]      
+    @stroke = ColorHelper::darken color_2_hsv, color_diff
   end
   
   def types

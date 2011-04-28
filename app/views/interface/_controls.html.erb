@@ -47,7 +47,7 @@
 			<%= radio_button_tag(:type, "lifestyle", @site_type == 'lifestyle') %>
 			<%= label_tag("Lifestyle") %>
 			<%= radio_button_tag(:type, "b2b", @site_type == 'b2b') %>
-			<%= label_tag("B2B") %>
+			<%= label_tag('B2b', 'B2B') %>
 		</div>
 		
 		<div id="service_type" style="display:none">
@@ -103,7 +103,7 @@
 		if ( $('#type_b2b').is(':checked') ){
 			// $('#service_type').show();
 		} else {
-			// $('#service_type').hide();
+			// $('#service_type').hide(); 
 		}
 	});
 </script>

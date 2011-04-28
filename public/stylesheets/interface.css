@@ -35,9 +35,9 @@ a{
 #interface ol li{
 	float:left;
 	color: #616161;
-	font-size: 14px;
+	font-size: 15px;
 	list-style: decimal;
-	margin:0 0 0.5em 1.5em;
+	margin:0 0.5em 0.5em 1.5em;
 }
 
 
@@ -45,6 +45,7 @@ a{
 
 #interface{
 	position: fixed;
+	font-family: arial;
 /*	position: relative;*/
 	float: left;
 	width: 18%;

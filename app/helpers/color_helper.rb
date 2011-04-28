@@ -79,4 +79,8 @@ module ColorHelper
     input
   end
   
+  def self.darken(color, diff)    
+    [color[0], color[1], [0, [255, (color[2] - diff)].min].max ]      
+  end
+  
 end
